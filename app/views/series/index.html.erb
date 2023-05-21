@@ -1,0 +1,31 @@
+<div class="container">
+  <h1 class="mt-5 mb-4">Series</h1>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Sinopsis</th>
+        <th>Director</th>
+        <th colspan="2"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @series.each do |serie| %>
+        <tr>
+          <td><%= serie.name %></td>
+          <td><%= serie.synopsis %></td>
+          <td><%= serie.director %></td>
+          <td><%= link_to 'Mostrar', serie_path(serie), class: 'btn btn-primary btn-sm' %></td>
+          <td><%= link_to 'Editar', edit_serie_path(serie), class: 'btn btn-secondary btn-sm' %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+
+  <%= link_to 'Agregar película', new_movie_path, class: 'btn btn-success' %>
+</div>
+

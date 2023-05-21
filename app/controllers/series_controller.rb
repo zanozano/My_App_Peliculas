@@ -1,5 +1,4 @@
 class SeriesController < ApplicationController
-  validates :name, :synopsis, :director, presence: true
   before_action :set_series, only: [:show, :edit, :update, :destroy]
 
   def index
