@@ -27,7 +27,7 @@ class SeriesController < ApplicationController
 
   def update
     if @serie.update(serie_params)
-      redirect_to series_path, notice: 'La serie ha sido actualizada exitosamente.'
+      redirect_to series_index_url, notice: 'La serie ha sido actualizada exitosamente.'
     else
       render :edit
     end
