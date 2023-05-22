@@ -18,11 +18,11 @@
           <td><%= movie.name %></td>
           <td><%= movie.synopsis %></td>
           <td><%= movie.director %></td>
-          <td><%= link_to 'Ver', movie_path(movie), class: 'btn btn-primary' %></td>
         </tr>
       <% end %>
     </tbody>
   </table>
+  <%= link_to "Ir a la lista de películas", movies_path, class: "btn btn-primary" %>
 
 
   <h2>Series</h2>
@@ -42,11 +42,11 @@
           <td><%= serie.name %></td>
           <td><%= serie.synopsis %></td>
           <td><%= serie.director %></td>
-          <td><%= link_to 'Ver', serie_path(serie), class: 'btn btn-primary' %></td>
         </tr>
       <% end %>
     </tbody>
   </table>
+ <%= link_to "Ir a la lista de series", series_index_path, class: "btn btn-primary" %>
 
   <h2>Documentales</h2>
   <table class="table table-striped">
@@ -65,9 +65,9 @@
           <td><%= documentary.name %></td>
           <td><%= documentary.synopsis %></td>
           <td><%= documentary.director %></td>
-          <td><%= link_to 'Ver', documentary_path(documentary), class: 'btn btn-primary' %></td>
         </tr>
       <% end %>
     </tbody>
   </table>
+   <%= link_to "Ir a la lista de documentales", documentaries_path, class: "btn btn-primary" %>
 </div>

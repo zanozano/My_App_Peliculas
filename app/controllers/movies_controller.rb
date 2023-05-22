@@ -33,7 +33,6 @@ class MoviesController < ApplicationController
     end
   end
 
-
   def destroy
     @movie.destroy
     redirect_to movies_url, notice: 'Movie was successfully destroyed.'

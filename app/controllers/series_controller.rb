@@ -40,11 +40,11 @@ class SeriesController < ApplicationController
 
   private
 
-  def set_series
+  def set_serie
     @serie = Serie.find(params[:id])
   end
 
-  def serie_params
-    params.require(:serie).permit(:name, :synopsis, :director)
+  def series_params
+    params.require(:serie).permit(:name, :description, :seasons)
   end
 end
