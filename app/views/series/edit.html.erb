@@ -1,5 +1,5 @@
 <div class="container">
-  <%= form_with(model: @serie, url: serie_path(@serie), method: :patch, class: 'mt-5') do |form| %>
+  <%= form_with(model: @serie, url: series_path(@serie), method: :patch, class: 'mt-5') do |form| %>
     <div class="mb-3">
       <%= form.label :name, 'Nombre', class: 'form-label' %>
       <%= form.text_field :name, class: 'form-control' %>

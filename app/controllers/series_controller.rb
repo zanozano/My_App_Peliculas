@@ -1,7 +1,7 @@
 class SeriesController < ApplicationController
-  before_action :set_series, only: [:show, :edit, :update, :destroy]
+  before_action :set_serie, only: [:show, :edit, :update, :destroy]
 
-  def index
+   def index
     @series = Serie.all
   end
 
@@ -35,7 +35,7 @@ class SeriesController < ApplicationController
 
   def destroy
     @serie.destroy
-    redirect_to series_url, notice: 'La serie ha sido eliminada exitosamente.'
+    redirect_to series_path, notice: 'La serie ha sido eliminada exitosamente.'
   end
 
   private
@@ -43,8 +43,9 @@ class SeriesController < ApplicationController
   def set_serie
     @serie = Serie.find(params[:id])
   end
+  
 
-  def series_params
-    params.require(:serie).permit(:name, :description, :seasons)
+  def serie_params
+    params.require(:serie).permit(:name, :synopsis, :director)
   end
 end

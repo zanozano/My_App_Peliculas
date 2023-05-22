@@ -1,5 +1,5 @@
 <div class="container">
-  <%= form_with(model: @movie, url: movie_path(@movie), method: :patch, class: 'mt-5') do |form| %>
+  <%= form_with(model: @documentary, url: documentary_path(@documentary), method: :patch, class: 'mt-5') do |form| %>
     <div class="mb-3">
       <%= form.label :name, 'Nombre', class: 'form-label' %>
       <%= form.text_field :name, class: 'form-control' %>
@@ -17,7 +17,7 @@
 
   <div class="mb-3">
       <%= form.submit 'Guardar', class: 'btn btn-primary' %>
-      <%= link_to 'Volver', movies_path, class: 'btn btn-secondary' %>
+      <%= link_to 'Volver', documentaries_path, class: 'btn btn-secondary' %>
     </div>
   <% end %>
 

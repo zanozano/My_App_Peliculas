@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  #done
   resources :movies
   resources :series
   resources :documentaries

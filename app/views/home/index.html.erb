@@ -1,73 +1,51 @@
 <div class="container">
   <h1 class="mt-5 mb-4">Películas, Series y Documentales</h1>
 
-  <h2>Películas</h2>
-  <table class="table table-striped">
-    <thead>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Tipo</th>
+      <th>Nombre</th>
+      <th>Sinopsis</th>
+      <th>Director</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @movies.each do |movie| %>
       <tr>
-        <th>Nombre</th>
-        <th>Sinopsis</th>
-        <th>Director</th>
-        <th colspan="2"></th>
+        <td>Película</td>
+        <td><%= movie.name %></td>
+        <td><%= movie.synopsis %></td>
+        <td><%= movie.director %></td>
       </tr>
-    </thead>
+    <% end %>
 
-    <tbody>
-      <% @movies.each do |movie| %>
-        <tr>
-          <td><%= movie.name %></td>
-          <td><%= movie.synopsis %></td>
-          <td><%= movie.director %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
+    <% @series.each do |serie| %>
+      <tr>
+        <td>Serie</td>
+        <td><%= serie.name %></td>
+        <td><%= serie.synopsis %></td>
+        <td><%= serie.director %></td>
+      </tr>
+    <% end %>
+
+    <% @documentaries.each do |documentary| %>
+      <tr>
+        <td>Documental</td>
+        <td><%= documentary.name %></td>
+        <td><%= documentary.synopsis %></td>
+        <td><%= documentary.director %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+  <div class="flex mb-4">
   <%= link_to "Ir a la lista de películas", movies_path, class: "btn btn-primary" %>
+  <%= link_to "Ir a la lista de series", series_index_path, class: "btn btn-primary" %>
+  <%= link_to "Ir a la lista de documentales", documentaries_path, class: "btn btn-primary" %>
+  </div>
 
-
-  <h2>Series</h2>
-  <table class="table table-striped">
-    <thead>
-      <tr>
-        <th>Nombre</th>
-        <th>Sinopsis</th>
-        <th>Director</th>
-        <th colspan="2"></th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <% @series.each do |serie| %>
-        <tr>
-          <td><%= serie.name %></td>
-          <td><%= serie.synopsis %></td>
-          <td><%= serie.director %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
- <%= link_to "Ir a la lista de series", series_index_path, class: "btn btn-primary" %>
-
-  <h2>Documentales</h2>
-  <table class="table table-striped">
-    <thead>
-      <tr>
-        <th>Nombre</th>
-        <th>Sinopsis</th>
-        <th>Director</th>
-        <th colspan="2"></th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <% @documentaries.each do |documentary| %>
-        <tr>
-          <td><%= documentary.name %></td>
-          <td><%= documentary.synopsis %></td>
-          <td><%= documentary.director %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-   <%= link_to "Ir a la lista de documentales", documentaries_path, class: "btn btn-primary" %>
 </div>
