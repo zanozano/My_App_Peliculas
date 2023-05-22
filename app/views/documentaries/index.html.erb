@@ -19,6 +19,8 @@
           <td><%= documentary.director %></td>
           <td><%= link_to 'Mostrar', documentary_path(documentary), class: 'btn btn-primary btn-sm' %></td>
           <td><%= link_to 'Editar', edit_documentary_path(documentary), class: 'btn btn-secondary btn-sm' %></td>
+          <td><%= link_to 'Eliminar', documentary_path(documentary), method: :delete, data: { confirm: '¿Estás seguro de que deseas eliminar esta película?' }, class: 'btn btn-danger btn-sm' %>
+</td>
         </tr>
       <% end %>
     </tbody>

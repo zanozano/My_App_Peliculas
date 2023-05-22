@@ -1,4 +1,5 @@
 <div class="container">
+<h1 class="mt-5 mb-4">Editar Documental</h1>
   <%= form_with(model: @documentary, url: documentary_path(@documentary), method: :patch, class: 'mt-5') do |form| %>
     <div class="mb-3">
       <%= form.label :name, 'Nombre', class: 'form-label' %>

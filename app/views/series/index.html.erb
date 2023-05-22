@@ -14,11 +14,13 @@
     <tbody>
       <% @series.each do |serie| %>
         <tr>
-          <td><%= serie.name %></td>
-          <td><%= serie.synopsis %></td>
-          <td><%= serie.director %></td>
-          <td><%= link_to 'Mostrar', series_path(serie), class: 'btn btn-primary btn-sm' %></td>
-          <td><%= link_to 'Editar', edit_series_path(serie), class: 'btn btn-secondary btn-sm' %></td>
+         <td><%= serie.name %></td>
+         <td><%= serie.synopsis %></td>
+        <td><%= serie.director %></td>
+        <td><%= link_to 'Mostrar', series_path(serie), class: 'btn btn-primary btn-sm' %></td>
+        <td><%= link_to 'Editar', edit_series_path(serie), class: 'btn btn-secondary btn-sm' %></td>
+        <td><%= link_to 'Eliminar', series_path(serie), method: :delete, data: { confirm: '¿Estás seguro de que deseas eliminar esta película?' }, class: 'btn btn-danger btn-sm' %>
+</td>
         </tr>
       <% end %>
     </tbody>
@@ -26,7 +28,7 @@
 
   <br>
 
-  <%= link_to 'Agregar película', new_series_path, class: 'btn btn-success' %>
+  <%= link_to 'Agregar Serie', new_series_path, class: 'btn btn-success' %>
   <%= link_to 'Volver', root_path, class: 'btn btn-secondary' %>
   
 </div>
